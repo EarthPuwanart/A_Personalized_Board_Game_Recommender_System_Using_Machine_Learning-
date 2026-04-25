@@ -6,6 +6,28 @@ A sophisticated hybrid recommendation engine designed to provide tailored board 
 
 This project implements a **Hybrid Recommender System** that assists users in navigating the vast world of board games. By leveraging modern Machine Learning techniques, it addresses common issues like the "Cold Start" problem and provides a diverse range of recommendations that align with individual player preferences.
 
+## ✨ Key Features
+
+*   **Discover Mode**: Discover new games through various categories such as **All-Time Legends**, **Trending Now**, and **Available in Thai**, as well as specific game tags.
+
+<img width="1897" height="940" alt="discover_mode" src="https://github.com/user-attachments/assets/ca872bbb-a09e-4faa-919b-1fa5160628f5" />
+
+*   **Mix & Match Mode**: Receive recommendations based on the similarity of up to 5 selected games, powered primarily by the **Content-Based** filtering model.
+*   **AI Picks Mode**: Get personalized recommendations based on your unique rating history (Login required), with the flexibility to choose from **three different recommendation models**.
+*   **User Authentication (Login)**: Secure access for users to save their preferences, managing their unique profile and rating history.
+*   **Manage Ratings**: A user-friendly interface to search and rate board games (1-10 scale), providing the essential data for the AI to learn and refine your personalized recommendations.
+
+## 📊 Data Source & Preprocessing
+
+The system's intelligence is built upon a vast dataset combining official metadata and extensive community feedback:
+
+*   **BoardGameGeek (BGG) API**: Used to fetch detailed metadata for over **135,000 board games**, including descriptions, categories, mechanics, and complexity levels.
+*   **Kaggle (BGG-derived) Dataset**: Provides a massive scale of community interaction data originally sourced from BGG, featuring **18.9 million ratings** from over **411,000 users** across **21,900+ games**.
+*   **Data Cleaning & Engineering**:
+    *   Implemented **Winsorization** to handle outliers in playtime and player counts.
+    *   Missing values were handled using **Median Imputation** for quantitative features.
+    *   Textual data was synthesized into a **Semantic Context** for deep learning embedding generation.
+
 ## 🛠️ Technical Architecture
 
 The system utilizes a dual-model approach to ensure high-quality recommendations:
@@ -22,22 +44,6 @@ The system utilizes a dual-model approach to ensure high-quality recommendations
 3.  **Hybrid Integration**:
     *   Combines scores from both models using a weighted approach to balance accuracy (Collaborative) and discovery (Content-based).
 
-## ✨ Key Features
-
-*   **Discover Mode**: Discover new games through various categories such as **All-Time Legends**, **Trending Now**, and **Available in Thai**, as well as specific game tags.
-*   **Mix & Match Mode**: Receive recommendations based on the similarity of up to 5 selected games, powered primarily by the **Content-Based** filtering model.
-*   **AI Picks Mode**: Get personalized recommendations based on your unique rating history (Login required), with the flexibility to choose from **three different recommendation models**.
-
-## 📊 Data Source & Preprocessing
-
-The system's intelligence is built upon a vast dataset combining official metadata and extensive community feedback:
-
-*   **BoardGameGeek (BGG) API**: Used to fetch detailed metadata for over **135,000 board games**, including descriptions, categories, mechanics, and complexity levels.
-*   **Kaggle (BGG-derived) Dataset**: Provides a massive scale of community interaction data originally sourced from BGG, featuring **18.9 million ratings** from over **411,000 users** across **21,900+ games**.
-*   **Data Cleaning & Engineering**:
-    *   Implemented **Winsorization** to handle outliers in playtime and player counts.
-    *   Missing values were handled using **Median Imputation** for quantitative features.
-    *   Textual data was synthesized into a **Semantic Context** for deep learning embedding generation.
 
 ## 📊 Evaluation Results
 
