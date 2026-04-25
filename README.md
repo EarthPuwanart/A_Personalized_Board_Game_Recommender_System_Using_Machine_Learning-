@@ -8,11 +8,8 @@ This project implements a **Hybrid Recommender System** that assists users in na
 
 ## ✨ Key Features
 
-*   **Discover Mode**: Discover new games through various categories such as **All-Time Legends**, **Trending Now**, and **Available in Thai**, as well as specific game tags.
-
-
-<img width="1897" height="940" alt="discover_mode" src="https://github.com/user-attachments/assets/ca872bbb-a09e-4faa-919b-1fa5160628f5" />
-
+*   **Discover Mode**: Discover new games through various categories such as **All-Time Legends**, **Trending Now**, and **Available in Thai**, as well as specific game tags.<br>
+<img width="1897" height="940" alt="discover_mode" src="https://github.com/user-attachments/assets/ca872bbb-a09e-4faa-919b-1fa5160628f5" /><br>
 
 *   **Mix & Match Mode**: Receive recommendations based on the similarity of up to 5 selected games, powered primarily by the **Content-Based** filtering model.
 
