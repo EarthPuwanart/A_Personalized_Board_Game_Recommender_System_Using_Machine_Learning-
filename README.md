@@ -33,7 +33,7 @@ The system utilizes a dual-model approach to ensure high-quality recommendations
 The system was rigorously tested using standard recommendation metrics:
 *   **Precision@10** & **Recall@10**
 *   **NDCG** (Normalized Discounted Cumulative Gain)
-*   **MRR** (Mean Reciprocal Rank) - achieving a peak score of **0.1305** for Collaborative Filtering.
+*   **MRR** (Mean Reciprocal Rank)
 
 ## 💻 Tech Stack
 
