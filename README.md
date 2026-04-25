@@ -28,6 +28,17 @@ The system utilizes a dual-model approach to ensure high-quality recommendations
 *   **Mix & Match Mode**: Receive recommendations based on the similarity of up to 5 selected games, powered primarily by the **Content-Based** filtering model.
 *   **AI Picks Mode**: Get personalized recommendations based on your unique rating history (Login required), with the flexibility to choose from **three different recommendation models**.
 
+## 📊 Data Source & Preprocessing
+
+The system's intelligence is built upon a vast dataset combining official metadata and extensive community feedback:
+
+*   **BoardGameGeek (BGG) API**: Used to fetch detailed metadata for over **135,000 board games**, including descriptions, categories, mechanics, and complexity levels.
+*   **Kaggle (BGG-derived) Dataset**: Provides a massive scale of community interaction data originally sourced from BGG, featuring **18.9 million ratings** from over **411,000 users** across **21,900+ games**.
+*   **Data Cleaning & Engineering**:
+    *   Implemented **Winsorization** to handle outliers in playtime and player counts.
+    *   Missing values were handled using **Median Imputation** for quantitative features.
+    *   Textual data was synthesized into a **Semantic Context** for deep learning embedding generation.
+
 ## 📊 Evaluation Results
 
 The system was rigorously tested using standard recommendation metrics:
