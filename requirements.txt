@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+numpy
+scipy
+scikit-learn
+joblib
+sentence-transformers
+python-jose[cryptography]
+passlib[argon2,bcrypt]
+tqdm
+pydantic
+python-multipart
