@@ -23,16 +23,39 @@ This project implements a **Hybrid Recommender System** that assists users in na
 *   **Manage Ratings**: A user-friendly interface to search and rate board games (1-10 scale), providing the essential data for the AI to learn and refine your personalized recommendations.<br><br>
 <img width="694" height="716" alt="manage_ratings_page" src="https://github.com/user-attachments/assets/2b8b41de-c3b9-4fb8-affa-4a9c0d827cc7" /><br>
 
-## 📊 Data Source & Preprocessing
+## ⚙️ Setup & Data
 
-The system's intelligence is built upon a vast dataset combining official metadata and extensive community feedback:
+To run this project locally, you will need to acquire the model files and datasets. **Note: All `.csv`, `.json`, and model files have been excluded from this repository for privacy and storage reasons.**
 
-*   **BoardGameGeek (BGG) API**: Used to fetch detailed metadata for over **135,000 board games**, including descriptions, categories, mechanics, and complexity levels.
-*   **Kaggle (BGG-derived) Dataset**: Provides a massive scale of community interaction data originally sourced from BGG, featuring **18.9 million ratings** from over **411,000 users** across **21,900+ games**.
-*   **Data Cleaning & Engineering**:
-    *   Implemented **Winsorization** to handle outliers in playtime and player counts.
-    *   Missing values were handled using **Median Imputation** for quantitative features.
-    *   Textual data was synthesized into a **Semantic Context** for deep learning embedding generation.
+1.  **Clone the repository**:
+    ```bash
+    git clone <your-repo-url>
+    cd <repo-name>
+    ```
+2.  **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Environment Variables**:
+    Create a `.env` file or set these environment variables:
+    ```env
+    BGG_API_TOKEN=your_bgg_api_token_here
+    JWT_SECRET_KEY=your_random_secret_key_here
+    ```
+4.  **Data Requirements**:
+    You must provide your own data files and place them in the following structure:
+    *   `users_db.json` (User authentication data)
+    *   `real_user_ratings.csv`
+    *   `theme_analysis_with_elbow.csv`
+    *   `collaborative/svd_model.joblib`
+    *   `collaborative/data/user_ratings.csv`
+    *   `content-based/data/bgg_games_cleaned.csv`
+    *   `content-based/data/hot_boardgames.csv`
+    *   `content-based/data/bgg_games_cleaned_BAAI_bge-base-en-v1.5_embeddings.npy`
+5.  **Run the application**:
+    ```bash
+    python main_api.py
+    ```
 
 ## 🛠️ Technical Architecture
 
@@ -64,6 +87,10 @@ The system was rigorously tested using standard recommendation metrics:
 *   **ML Libraries**: Scikit-learn, Surprise (SVD), Transformers (BGE model)
 *   **Database/Storage**: XML (BGG API), CSV (Kaggle Dataset)
 *   **Frontend**: HTML5, Vanilla CSS3, JavaScript
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 *Developed as part of a Senior Project at the Data Science Department, Faculty of Science, Silpakorn University.*
